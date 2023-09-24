@@ -1,0 +1,26 @@
+function demo(input){
+    let num = Number(input[0]);
+    let game = "";
+    let hearth = 0; let fornit = 0; overw = 0; other = 0;
+    for(i = 1; i <= num; i++){
+        game = input[i];
+        switch(game){
+            case"Hearthstone":
+            hearth++;
+            break;
+            case"Fornite":
+            fornit++;
+            break;
+            case"Overwatch":
+            overw++;
+            break;
+            default:
+            other++;
+            break;
+        }
+    }
+    console.log(`Hearthstone - ${(hearth / num * 100).toFixed(2)}%`); 
+    console.log(`Fornite - ${(fornit / num * 100).toFixed(2)}%`);
+    console.log(`Overwatch - ${(overw / num * 100).toFixed(2)}%`);
+    console.log(`Others - ${(other / num * 100).toFixed(2)}%`);
+}
