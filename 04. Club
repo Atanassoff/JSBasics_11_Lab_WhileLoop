@@ -1,0 +1,32 @@
+function demo(input){
+    let target = Number(input[0]);
+    let drink = "";
+    let price = 0;
+    let orderPrice = 0;
+    let total = 0;
+    let num = 0;
+    let aquired = false;
+    let i = 1;
+    while((drink = input[i]) != "Party!"){
+        num = Number(input[i + 1]);
+        price = drink.length; 
+        orderPrice = price * num;
+        if(orderPrice % 2 == 1){
+            orderPrice *= 0.75;
+        }
+        total += orderPrice;
+        if(total >= target){
+            aquired = true;
+            console.log(`Target acquired.`);
+            console.log(`Club income - ${total.toFixed(2)} leva.`);
+            break;
+        }
+        orderPrice = 0;
+        i += 2;
+    }
+    let diff = target - total;
+    if(aquired == false){
+        console.log(`We need ${diff.toFixed(2)} leva more.`);
+        console.log(`Club income - ${total.toFixed(2)} leva.`);
+    }
+}
